@@ -1,0 +1,27 @@
+<p>login works!</p>
+<h3>Template Driven Form [TDF] </h3>
+
+<div class="form-group">
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <div class="row m-3">
+      <label for="unm" class="col-sm-1 me-5 col-form-label"> Username: </label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="unm" name="username" placeholder="Username" ngModel>
+      </div>
+    </div>
+
+    <div class="row m-3">
+      <label for="pwd" class="col-sm-1 me-5 col-form-label">Password: </label>
+      <div class="col-sm-4">
+        <input type="password" class="form-control" id="pwd" name="password" placeholder="Password" ngModel>
+      </div>
+    </div>
+
+    <button type="submit" class="m-5 btn btn-primary"> Login </button>
+  </form>
+</div>
+
+<div *ngIf="loginStatus">
+
+    {{user.username}} Welcome {{loginStatus}}
+</div>
